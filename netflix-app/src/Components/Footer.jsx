@@ -12,22 +12,37 @@ const Footer = () => {
 							<Col className="d-flex align-items-center">
 								<SocialIcon
 									className="social-icon"
-									style={{ height: 20, width: 20, marginRight: "8px" }}
+									style={{
+										height: 20,
+										width: 20,
+										marginRight: "8px",
+										marginBottom: "10px",
+									}}
 									url="https://facebook.com"
 								/>
 								<SocialIcon
 									className="social-icon"
-									style={{ height: 20, width: 20, marginRight: "8px" }}
+									style={{
+										height: 20,
+										width: 20,
+										marginRight: "8px",
+										marginBottom: "10px",
+									}}
 									url="https://discord.com"
 								/>
 								<SocialIcon
 									className="social-icon"
-									style={{ height: 20, width: 20, marginRight: "8px" }}
+									style={{
+										height: 20,
+										width: 20,
+										marginRight: "8px",
+										marginBottom: "10px",
+									}}
 									url="https://twitter/x.com"
 								/>
 								<SocialIcon
 									className="social-icon"
-									style={{ height: 20, width: 20 }}
+									style={{ height: 20, width: 20, marginBottom: "10px" }}
 									url="https://youtube.com"
 								/>
 							</Col>
