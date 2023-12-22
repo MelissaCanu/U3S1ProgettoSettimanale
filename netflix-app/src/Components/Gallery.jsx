@@ -12,7 +12,9 @@ class Gallery extends Component {
 			);
 			const data = await response.json();
 			this.setState({
-				movies: data.Search || [],
+				movies: data.Search
+					? data.Search.slice(0, 6)
+					: [] /* slice per avere solo 6 risultati per riga */,
 			}); /* devo aggiungere sempre || [] per evitare problemi con null o undefined? ho cercato online ma non ho ben capito  */
 		} catch (error) {
 			console.error("Error fetching movies:", error);
@@ -27,10 +29,16 @@ class Gallery extends Component {
 		const { movies } = this.state;
 
 		return (
-			<div>
+			<div className="row row-cols-1 row-cols-sm-2 row-cols-lg-4 row-cols-xl-6 md-4 bg-dark">
 				{movies.map((movie) => (
-					<div key={movie.imdbID}>
-						<img src={movie.Poster} alt={`Poster for ${movie.Title}`} />
+					<div key={movie.imdbID} className="col-mb-4">
+						<div class="col mb-2 text-center px-1">
+							<img
+								src={movie.Poster}
+								className="img-fluid"
+								alt={`Poster for ${movie.Title}`}
+							/>
+						</div>
 					</div>
 				))}
 			</div>
