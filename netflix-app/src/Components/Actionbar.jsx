@@ -7,7 +7,7 @@ import { BsGrid, BsGrid3X3 } from "react-icons/bs";
 function Actionbar() {
 	return (
 		<div className="d-flex justify-content-between bg-dark" variant="dark">
-			<div className="d-flex mx-5">
+			<div className="d-flex mx-4">
 				<h2 className="mb-4 text-white">TV Shows</h2>
 				<ButtonGroup className="ms-4 mt-1">
 					<Dropdown>
