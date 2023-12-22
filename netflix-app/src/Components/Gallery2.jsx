@@ -11,11 +11,29 @@ class Gallery2 extends Component {
 				"http://www.omdbapi.com/?s&apikey=b43efca6&s=american-horror-story"
 			);
 			const data = await response.json();
+			/* filtro i film in base all'anno di uscita */
+
+			const movieYears = ["2018–", "2012", "2017", "tt4255166", "2016", "2019"];
+			/* filtro per Year o imdbID perché non tutti hanno il poster */
+			const filterMovies = data.Search
+				? data.Search.filter(
+						(movie) =>
+							(movieYears.includes(movie.Year) ||
+								movieYears.includes(movie.imdbID)) &&
+							movie.Year !== "N/A"
+				  )
+				: [];
+			/* sorto da vecchio a nuovo */
+			const sortMovies = filterMovies.sort(
+				(a, b) => parseInt(a.Year) - parseInt(b.Year)
+			);
+
+			// Slice per avere 6 risultati
+			const slicedMovies = sortMovies.slice(0, 6);
+
 			this.setState({
-				movies: data.Search
-					? data.Search.slice(0, 6)
-					: [] /* slice per avere solo 6 risultati per riga */,
-			}); /* devo aggiungere sempre || [] per evitare problemi con null o undefined? ho cercato online ma non ho ben capito  */
+				movies: slicedMovies,
+			});
 		} catch (error) {
 			console.error("Error fetching movies:", error);
 		}
