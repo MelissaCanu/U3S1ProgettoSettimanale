@@ -30,14 +30,16 @@ function NavBootstrap() {
 				</Navbar.Collapse>
 
 				<Nav className="ms-auto">
-					<Nav.Link className="text-white">
+					<Nav.Link className="text-white d-none d-lg-block">
 						<BsSearch />
 					</Nav.Link>
-					<Nav.Link className="fw-bold text-white">KIDS</Nav.Link>
-					<Nav.Link className="text-white">
+					<Nav.Link className="fw-bold text-white d-none d-lg-block">
+						KIDS
+					</Nav.Link>
+					<Nav.Link className="text-white d-none d-lg-block">
 						<BsBell />
 					</Nav.Link>
-					<Nav.Link className="text-white">
+					<Nav.Link className="text-white d-none d-lg-block">
 						<BsPersonCircle />
 					</Nav.Link>
 				</Nav>

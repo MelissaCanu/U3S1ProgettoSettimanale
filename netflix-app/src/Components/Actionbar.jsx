@@ -27,7 +27,7 @@ function Actionbar() {
 					</Dropdown>
 				</ButtonGroup>
 			</div>
-			<div className="mx-3 d-none d-md-flex">
+			<div className="mx-3">
 				<BsGrid className="icons me-2 text-white" />
 				<BsGrid3X3 className="icons text-white" />
 			</div>
