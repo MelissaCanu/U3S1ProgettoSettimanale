@@ -53,7 +53,7 @@ class Gallery extends Component {
 							<div class="col text-center px-1">
 								<img
 									src={movie.Poster}
-									className="img-fluid"
+									className="img-fluid img-hover-effect"
 									style={{
 										height: "300px",
 										width: "300px",

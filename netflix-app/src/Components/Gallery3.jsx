@@ -57,11 +57,11 @@ class Gallery3 extends Component {
 				</h2>
 				<div className="row row-cols-1 row-cols-sm-2 row-cols-lg-4 row-cols-xl-6 md-4 bg-dark mx-1 py-3">
 					{movies.map((movie) => (
-						<div key={movie.imdbID} className="col-mb-4">
-							<div class="col text-center px-1">
+						<div key={movie.imdbID} className="col-md-4">
+							<div className="col text-center px-1">
 								<img
 									src={movie.Poster}
-									className="img-fluid"
+									className="img-fluid img-hover-effect"
 									style={{
 										height: "300px",
 										width: "300px",

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
@@ -7,6 +7,18 @@ import { BsBell } from "react-icons/bs";
 import { BsPersonCircle } from "react-icons/bs";
 
 function NavBootstrap() {
+	/* search input, provo con hook perché non ho fatto classe*/
+	const [searchVisibility, setSearchVisibility] = useState(false);
+	const [searchMovie, setSearchMovie] = useState("");
+
+	const toggleSearch = () => {
+		setSearchVisibility(!searchVisibility);
+	};
+
+	const handleSearchChange = (e) => {
+		setSearchMovie(e.target.value);
+	};
+
 	return (
 		<Navbar expand="lg" bg="dark" variant="dark">
 			<Container fluid>
@@ -30,9 +42,21 @@ function NavBootstrap() {
 				</Navbar.Collapse>
 
 				<Nav className="ms-auto">
-					<Nav.Link className="text-white d-none d-lg-block">
+					<Nav.Link
+						className="text-white d-none d-lg-block"
+						onClick={toggleSearch}
+					>
 						<BsSearch />
 					</Nav.Link>
+					{searchVisibility && (
+						<input
+							type="text"
+							className="form-control ms-2"
+							placeholder="Search movies here..."
+							value={searchMovie}
+							onChange={handleSearchChange}
+						/>
+					)}
 					<Nav.Link className="fw-bold text-white d-none d-lg-block">
 						KIDS
 					</Nav.Link>
