@@ -62,6 +62,7 @@ class Gallery2 extends Component {
 										height: "300px",
 										width: "300px",
 										objectFit: "cover",
+										marginBottom: "20px",
 									}}
 									alt={`Poster for ${movie.Title}`}
 								/>
