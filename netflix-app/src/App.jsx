@@ -5,6 +5,7 @@ import Actionbar from "./Components/Actionbar";
 import Gallery from "./Components/Gallery";
 import Gallery2 from "./Components/Gallery2";
 import Gallery3 from "./Components/Gallery3";
+import Footer from "./Components/Footer";
 
 function App() {
 	return (
@@ -15,6 +16,7 @@ function App() {
 			<Gallery />
 			<Gallery2 />
 			<Gallery3 />
+			<Footer />
 		</div>
 	);
 }
