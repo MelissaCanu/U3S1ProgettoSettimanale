@@ -6,7 +6,7 @@ import Gallery from "./Components/Gallery";
 
 function App() {
 	return (
-		<div>
+		<div className="bg-dark">
 			<NavBootstrap />
 			<div className="container-fluid px-4"></div>
 			<Actionbar />
