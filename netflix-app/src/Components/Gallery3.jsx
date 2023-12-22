@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class Gallery extends Component {
+class Gallery3 extends Component {
 	state = {
 		movies: [],
 	};
@@ -8,28 +8,14 @@ class Gallery extends Component {
 	fetchMovies = async () => {
 		try {
 			const response = await fetch(
-				"http://www.omdbapi.com/?apikey=b43efca6&s=scream"
+				"http://www.omdbapi.com/?s&apikey=b43efca6&s=alien"
 			);
 			const data = await response.json();
-
-			/* filtro i film in base all'anno di uscita */
-
-			const movieYears = ["1996", "1997", "2000", "2011", "2022", "2023"];
-			/* filtro in base agli anni che voglio */
-			const filterMovies = data.Search
-				? data.Search.filter((movie) => movieYears.includes(movie.Year))
-				: [];
-			/* sorto da vecchio a nuovo */
-			const sortMovies = filterMovies.sort(
-				(a, b) => parseInt(a.Year) - parseInt(b.Year)
-			);
-
-			// Slice per avere 6 risultati
-			const slicedMovies = sortMovies.slice(0, 6);
-
 			this.setState({
-				movies: slicedMovies,
-			});
+				movies: data.Search
+					? data.Search.slice(0, 6)
+					: [] /* slice per avere solo 6 risultati per riga */,
+			}); /* devo aggiungere sempre || [] per evitare problemi con null o undefined? ho cercato online ma non ho ben capito  */
 		} catch (error) {
 			console.error("Error fetching movies:", error);
 		}
@@ -44,8 +30,8 @@ class Gallery extends Component {
 
 		return (
 			<>
-				<h2 style={{ fontSize: "1.5rem" }} className="text-white mx-4">
-					The Scream Saga
+				<h2 style={{ fontSize: "1.5rem" }} className="text-white mx-4 mt-4">
+					Alien Marathon
 				</h2>
 				<div className="row row-cols-1 row-cols-sm-2 row-cols-lg-4 row-cols-xl-6 md-4 bg-dark mx-1">
 					{movies.map((movie) => (
@@ -70,4 +56,4 @@ class Gallery extends Component {
 	}
 }
 
-export default Gallery;
+export default Gallery3;

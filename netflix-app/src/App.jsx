@@ -3,6 +3,8 @@ import NavBootstrap from "./Components/Navbar";
 import "./App.css";
 import Actionbar from "./Components/Actionbar";
 import Gallery from "./Components/Gallery";
+import Gallery2 from "./Components/Gallery2";
+import Gallery3 from "./Components/Gallery3";
 
 function App() {
 	return (
@@ -11,6 +13,8 @@ function App() {
 			<div className="container-fluid px-4"></div>
 			<Actionbar />
 			<Gallery />
+			<Gallery2 />
+			<Gallery3 />
 		</div>
 	);
 }
