@@ -1,57 +1,49 @@
 import React from "react";
-import { BsSearch, BsBell, BsPersonCircle } from "react-icons";
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import { BsSearch } from "react-icons/bs";
+import { BsBell } from "react-icons/bs";
+import { BsPersonCircle } from "react-icons/bs";
 
-const Navbar = () => {
+function NavBootstrap() {
 	return (
-		<nav
-			className="navbar navbar-expand-lg bg-dark"
-			style={{ backgroundColor: "#221f1f !important" }}
-		>
-			<div className="container-fluid">
-				<a className="navbar-brand" href="#Home">
+		<Navbar expand="lg" bg="dark" variant="dark">
+			<Container fluid>
+				<Navbar.Brand href="#">
 					<img
 						src={process.env.PUBLIC_URL + "/assets/logo.png"}
+						alt="Logo"
 						style={{ width: "100px", height: "55px" }}
-						alt="Netflix Logo"
 					/>
-				</a>
-				<button
-					className="navbar-toggler"
-					type="button"
-					data-bs-toggle="collapse"
-					data-bs-target="#navbarSupportedContent"
-					aria-controls="navbarSupportedContent"
-					aria-expanded="false"
-					aria-label="Toggle navigation"
-				>
-					<span className="navbar-toggler-icon"></span>
-				</button>
-				<div className="collapse navbar-collapse" id="navbarSupportedContent">
-					<ul className="navbar-nav me-auto mb-2 mb-lg-0">
-						<li className="nav-item">
-							<a className="nav-link active fw-bold" href="#">
-								Home
-							</a>
-						</li>
-					</ul>
-					<div className="d-flex align-items-center">
-						<i className="bi bi-search icons">
-							<BsSearch />
-						</i>
-						<div id="kids" className="fw-bold">
-							KIDS
-						</div>
-						<i className="bi bi-bell icons">
-							<BsBell />
-						</i>
-						<i className="bi bi-person-circle icons">
-							<BsPersonCircle />
-						</i>
-					</div>
-				</div>
-			</div>
-		</nav>
-	);
-};
+				</Navbar.Brand>
 
-export default Navbar;
+				<Navbar.Toggle aria-controls="basic-navbar-nav" />
+				<Navbar.Collapse id="basic-navbar-nav">
+					<Nav className="me-auto">
+						<Nav.Link href="#home">Home</Nav.Link>
+						<Nav.Link href="#tv-shows">TV Shows</Nav.Link>
+						<Nav.Link href="#movies">Movies</Nav.Link>
+						<Nav.Link href="#recently-added">Recently Added</Nav.Link>
+						<Nav.Link href="#my-list">My List</Nav.Link>
+					</Nav>
+				</Navbar.Collapse>
+
+				<Nav className="ms-auto">
+					<Nav.Link className="text-white">
+						<BsSearch />
+					</Nav.Link>
+					<Nav.Link className="fw-bold text-white">KIDS</Nav.Link>
+					<Nav.Link className="text-white">
+						<BsBell />
+					</Nav.Link>
+					<Nav.Link className="text-white">
+						<BsPersonCircle />
+					</Nav.Link>
+				</Nav>
+			</Container>
+		</Navbar>
+	);
+}
+
+export default NavBootstrap;
